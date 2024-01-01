@@ -27,8 +27,15 @@ body {
         hours = hours < 10 ? "0" + hours : hours;
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
-        
-        time_element.innerHTML = `${hours}:${minutes}:${seconds}`;
+       
+        let m = currentDate.getMonth();
+        let d = currentDate.getDay();
+        let y = currentDate.getFullYear();
+
+        //m = m < 10 ? `0${m}` : m;
+        //d = d < 10 ? `0${d}` : d;
+
+        time_element.innerHTML = `${m}/${d}/${y}/${hours}:${minutes}:${seconds}`;
     }
     displayTime();
     setInterval(displayTime, 1000);
